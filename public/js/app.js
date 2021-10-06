@@ -15,10 +15,12 @@ form.addEventListener('submit', (e) => {
         return resultsDiv.innerHTML = data.error;
       }
 
+      console.log(data);
+
       resultsDiv.innerHTML = `
         <img src=${data.weather_icons} />
-        <p>Currently in <b>${data.name}, ${data.region} (${data.country})</b>, it's <b>${data.temperature} C°</b>.</p>
-        <p>Feels like <b>${data.feelslike} °C</b>.</p>
+        <p>Currently in <b>${data.name}, ${data.region} (${data.country})</b>, it's <b>${data.weather_descriptions[0]}</b>.</p>
+        <p>The temperature is <b>${data.temperature} C°</b>. Feels like <b>${data.feelslike} °C</b>.</p>
         <p>There's <b>${data.precip}%</b> chance of rain.</p>
         `;
     })
